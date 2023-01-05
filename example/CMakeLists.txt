@@ -5,4 +5,4 @@ set(CMAKE_C_STANDARD 99)
 project(smiley C)
 
 add_executable(smiley smiley.c)
-target_link_libraries(smiley plutovg m)
+target_link_libraries(smiley plutovg $<$<NOT:$<BOOL:${WIN32}>>:m>)
